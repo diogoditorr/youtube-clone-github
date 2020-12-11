@@ -47,6 +47,7 @@ export default createGlobalStyle`
         --calendar-scale-4: #216E3A;
         --javascript: #f1e05a;
         --typescript: #2b7489;
+        --python: #3572A5;
         --other-language: #8257e5;
     }
 `;
