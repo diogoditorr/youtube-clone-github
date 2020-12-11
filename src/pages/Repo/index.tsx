@@ -1,9 +1,55 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// import { Container } from './styles';
+import { 
+    Container, 
+    Breadcrumb, 
+    RepoIcon, 
+    Stats, 
+    StarIcon, 
+    ForkIcon, 
+    LinkButton, 
+    GithubIcon 
+} from './styles';
 
 const Repo: React.FC = () => {
-  return <div />;
+    return (
+        <Container>
+            <Breadcrumb>
+                <RepoIcon />
+                
+                <Link className={'username'} to={'/diogoditorr'}>
+                    diogoditorr
+                </Link>
+
+                <span>/</span>
+
+                <Link className={'reponame'} to={'/diogoditorr/discord-bot-py'}>
+                    discord-bot-py
+                </Link>
+            </Breadcrumb>
+
+            <p>Bot focused on music using the Discord.py library</p>
+
+            <Stats>
+                <li>
+                    <StarIcon />
+                    <b>9</b>
+                    <span>stars</span>
+                </li>
+                <li>
+                    <ForkIcon />
+                    <b>0</b>
+                    <span>forks</span>
+                </li>
+            </Stats>
+
+            <LinkButton href={'https://github.com/diogoditorr/discord-bot-py'}>
+                <GithubIcon />
+                <span>View on Github</span>
+            </LinkButton>
+        </Container>
+    );
 }
 
 export default Repo;
