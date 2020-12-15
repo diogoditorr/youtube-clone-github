@@ -68,6 +68,11 @@ export const Row = styled.ul`
             color: var(--gray);
         }
 
+        > b {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
         > * {
             margin-right: 5px;
         }
@@ -81,7 +86,9 @@ const iconCSS = css`
     flex-shrink: 0;
 `;
 
-export const PeopleIcon = styled(RiGroupLine)`${iconCSS}`;
+export const PeopleIcon = styled(RiGroupLine)`${iconCSS}
+    margin-top: 2px;
+`;
 
 export const Column = styled.ul`
     li {

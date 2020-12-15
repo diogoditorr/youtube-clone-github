@@ -14,6 +14,11 @@ export const GithubLogo = styled(FaGithub)`
     height: 32px;
     // Não amassa a logo
     flex-shrink: 0;
+
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
 `;
 
 export const SearchForm = styled.form`
