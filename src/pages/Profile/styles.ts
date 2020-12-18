@@ -1,5 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { PackageIcon } from '@styled-icons/feather'
 import { RiGitRepositoryLine } from 'react-icons/ri';
+// import { FiBookOpen } from 'react-icons/fi';
+import { HiOutlineBookOpen } from 'react-icons/hi'
+import { AiOutlineProject } from 'react-icons/ai';
+
 
 export const Container = styled.div`
     --horizontalPadding: 16px;
@@ -66,10 +71,21 @@ export const CalendarHeading = styled.span`
     display: inline-flex;
 `;
 
-export const RepoIcon = styled(RiGitRepositoryLine)`
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
+const iconCSS = css`
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+`;
+
+export const OverviewIcon = styled(HiOutlineBookOpen)`${iconCSS}`;
+
+export const RepoIcon = styled(RiGitRepositoryLine)`${iconCSS}`;
+
+export const ProjectsIcon = styled(AiOutlineProject)`${iconCSS}`;
+
+export const PackagesIcon = styled(PackageIcon)`${iconCSS}
+    width: 20px;
+    height: 20px;
 `;
 
 export const Tab = styled.div`
@@ -82,21 +98,45 @@ export const Tab = styled.div`
 
         padding: 14px 16px;
 
-        border-bottom: 2px solid var(--orange);
+        border-bottom: 2px solid transparent;
+        
+        cursor: pointer;
 
         .label {
             font-size: 14px;
-            font-weight: 600;
-            padding: 0 7px;
+            padding-left: 7px;
         }
 
         .number {
             font-size: 12px;
             font-weight: 500;
             background: var(--ticker);
-            padding: 2px 6px;
+            margin-left: 7px;
+            padding: 2px 8px;
             border-radius: 24px;
         }
+
+        > svg {
+            opacity: 0.5;
+        }
+
+        &.active {
+            border-bottom: 2px solid var(--orange);
+
+            .label {
+                font-weight: 600;
+            }
+
+            > svg {
+                opacity: 1;
+            }
+        }
+
+        &:not(.active):hover, &:not(.active):focus {
+            border-bottom: 2px solid var(--border);
+        }
+
+        transition: border-bottom-color 0.2s ease-in;
     }
 
     .line {
@@ -107,10 +147,17 @@ export const Tab = styled.div`
     }
 
     &.mobile {
-        margin-top: var(--verticalPadding);
+        display: flex;
+
+        margin: var(--verticalPadding) -32px 0 -32px;
+        padding: 0 32px;
+
+        border-bottom: 1px solid var(--border);
         
-        .content {
-            margin: 0 auto;
+        overflow-x: auto;
+        
+        .line {
+            display: none;
         }
 
         @media (min-width: 768px) {

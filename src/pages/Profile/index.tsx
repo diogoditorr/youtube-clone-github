@@ -8,7 +8,10 @@ import {
     RightSide,
     Repos,
     CalendarHeading,
+    OverviewIcon,
     RepoIcon,
+    ProjectsIcon,
+    PackagesIcon,
     Tab,
 } from './styles';
 
@@ -62,11 +65,30 @@ const Profile: React.FC = () => {
     }
 
     const TabContent = () => (
-        <div className="content">
-            <RepoIcon />
-            <span className="label">Repositories</span>
-            <span className="number">{data.user?.public_repos}</span>
-        </div>
+        <>
+            <div className="content active">
+                <OverviewIcon />
+                <span className="label">Overview</span>
+            </div>
+
+            <div className="content">
+                <RepoIcon />
+                <span className="label">Repositories</span>
+                <span className="number">{data.user?.public_repos}</span>
+            </div>
+
+            <div className="content">
+                <ProjectsIcon />
+                <span className="label">Projects</span>
+            </div>
+
+            <div className="content">
+                <PackagesIcon />
+                <span className="label">Packages</span>
+            </div>
+
+            
+        </>
     );
 
     return (
