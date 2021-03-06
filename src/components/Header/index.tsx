@@ -25,6 +25,7 @@ interface Props {
 
 const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
     const [search, setSearch] = useState('');
+    const [menu, setMenu] = useState('');
     const navigate = useNavigate();
 
     function handleSubmit(event: React.FormEvent) {
@@ -38,14 +39,14 @@ const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
     }
 
     function toggleNavigation() {
-        const nav = document.getElementById('navigation');
+        setMenu(menu === '' ? 'active' : '');
     }
 
     return (
         <Container>
             <GithubLogoDesktop onClick={toggleTheme}/>
             <MenuIcon onClick={toggleNavigation}/>
-            <Navigation id="navigation">
+            <Navigation className={menu}>
                 <SearchForm onSubmit={handleSubmit}>
                     <input 
                         placeholder="Enter Username or Repo..." 
@@ -56,23 +57,23 @@ const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
                 
                 <nav>
                     <div className="mobile">
-                        <a href="/#">Dashboard</a>
+                        <a href="/#"><span>Dashboard</span></a>
                     </div>
 
-                    <a className="wrap" href="/#">Pull requests</a> 
-                    <a href="/#">Issues</a> 
-                    <a href="/#">Marketplace</a> 
-                    <a href="/#">Explore</a> 
+                    <a className="wrap" href="/#"><span>Pull requests</span></a> 
+                    <a href="/#"><span>Issues</span></a> 
+                    <a href="/#"><span>Marketplace</span></a> 
+                    <a href="/#"><span>Explore</span></a> 
                     
                     <div className="mobile">
-                        <a href="/#">Settings</a>
+                        <a href="/#"><span>Settings</span></a>
                         <a href="/#">
                             <AvatarLogged src="https://avatars3.githubusercontent.com/u/35296262?v=4"/>
-                            diogoditorr
+                            <span>diogoditorr</span>
                         </a> 
                         <a href="/#">
                             <SingOutIcon />
-                            Sign Out
+                            <span>Sign Out</span>
                         </a> 
                     </div>
                         
@@ -82,10 +83,12 @@ const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
                 <GithubLogoMobile onClick={toggleTheme}/>
             </div>
             <NotificationIcon />
+
             <QuickOptionsDesktop>
                 <PlusIcon />
                 <ArrowDropDownIcon />
             </QuickOptionsDesktop>
+
             <ProfileOptionsDesktop>
                 <AvatarLogged src="https://avatars3.githubusercontent.com/u/35296262?v=4"/>
                 <ArrowDropDownIcon />

@@ -2,7 +2,9 @@ import styled, { css } from 'styled-components';
 import { RiGitRepositoryLine, RiStarLine } from 'react-icons/ri';
 import { AiOutlineFork } from 'react-icons/ai';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+    className: 'RepoCard'
+})`
     display: flex;
     flex-direction: column;
     justify-content: space-between;

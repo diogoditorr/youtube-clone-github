@@ -6,7 +6,9 @@ import { HiOutlineBookOpen } from 'react-icons/hi'
 import { AiOutlineProject } from 'react-icons/ai';
 
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+    className: 'Profile'
+})`
     --horizontalPadding: 16px;
     --verticalPadding: 24px;
 

@@ -6,7 +6,9 @@ import { ReactComponent as ThreeBar } from '../../assets/icons/ThreeBar.svg';
 import { SignOut } from '@styled-icons/octicons';
 // import { ThreeBars } from '@styled-icons/octicons';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+    className: 'Header'
+})`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -74,7 +76,12 @@ export const MenuIcon = styled(ThreeBar)`
 `;
 
 export const Navigation = styled.div`
-    display: flex;
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+
     flex-direction: column;
 
     order: 2;
@@ -91,7 +98,6 @@ export const Navigation = styled.div`
             font-size: 14px;
             font-weight: 600;
 
-            color: #fff;
             text-decoration: none;
 
             padding: 9px 0;
@@ -99,21 +105,31 @@ export const Navigation = styled.div`
 
             transition: color, fill 0s;
 
+            > span {
+                color: #fff;
+            }
+
             > img, svg {
                 margin-right: 4px;
             }
 
             &:hover {
-                color: #b6bfbd;
+                color: var(--header-hover);
 
                 > svg {
-                    fill: #b6bfbd;
+                    fill: var(--header-hover);
+                }
+
+                > span {
+                    color: var(--header-hover);
                 }
             }
         }
     }
 
+
     @media (min-width: 768px) {
+        display: flex;
         flex-direction: row;
         align-items: center;
         order: inherit;
@@ -152,7 +168,7 @@ export const SearchForm = styled.form`
         outline: 0;
         border: 1px solid var(--search);
         border-radius: 6px;
-        background: var(--header);
+        background: var(--input-background);
         color: #fff;
 
         ::placeholder {
@@ -198,7 +214,7 @@ export const NotificationIcon = styled(FaRegBell)`
     cursor: pointer;
 
     &:hover {
-        fill: #b6bfbd;
+        fill: var(--header-hover);
     }
 `;
 
@@ -214,38 +230,46 @@ export const ArrowDropDownIcon = styled(RiArrowDropDownFill)`${iconCSS}
 `;
 
 export const QuickOptionsDesktop = styled.div`
-    display: flex;
-    align-items: center;
-    margin-right: 16px;
+    display: none;
 
-    > svg:first-child {
-        margin-right: 2px;
-    }
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        margin-right: 16px;
 
-    cursor: pointer;
-    transition: color, fill, 0s;
-
-    &:hover {
-        > svg {
-            fill: #b6bfbd;
+        > svg:first-child {
+            margin-right: 2px;
+        }
+        
+        cursor: pointer;
+        transition: color, fill, 0s;
+        
+        &:hover {
+            > svg {
+                fill: var(--header-hover);
+            }
         }
     }
 `;
 
 export const ProfileOptionsDesktop = styled.div`
-    display: flex;
-    align-items: center;
+    display: none;
 
-    > img { 
-        margin-right: 2px;
-    } 
-
-    cursor: pointer;
-    transition: color, fill, 0s;
-
-    &:hover {
-        > svg {
-            fill: #b6bfbd;
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+    
+        > img { 
+            margin-right: 2px;
+        } 
+    
+        cursor: pointer;
+        transition: color, fill, 0s;
+    
+        &:hover {
+            > svg {
+                fill: var(--header-hover);
+            }
         }
     }
 `;

@@ -7,7 +7,9 @@ import {
     RiLinksLine 
 } from 'react-icons/ri';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+    className: 'ProfileData'
+})`
     
 `;
 
