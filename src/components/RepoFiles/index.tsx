@@ -3,7 +3,7 @@ import React from 'react';
 import { 
     Container, 
     Header,
-    Profile,
+    Overflow,
     Avatar,
     LastCommit,
     LastCommitDate,
@@ -18,12 +18,12 @@ const RepoFiles: React.FC = () => {
     return (
         <Container>
             <Header>
-                <Profile>
-                    <Avatar src="https://avatars.githubusercontent.com/u/35296262?s=120&v=4" alt="diogoditorr" />
+                <Avatar src="https://avatars.githubusercontent.com/u/35296262?s=120&v=4" alt="diogoditorr" />
+                
+                <Overflow>
                     <span>diogoditorr</span>
-                </Profile>
-
-                <LastCommit>Merge pull request #7 from diogoditorr/dependabot/pip/httplib2-0.19.0</LastCommit>
+                    <LastCommit>Merge pull request #7 from diogoditorr/dependabot/pip/httplib2-0.19.0</LastCommit>
+                </Overflow>
 
                 <LastCommitDate>19 days ago</LastCommitDate>
 

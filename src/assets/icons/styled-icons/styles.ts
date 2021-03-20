@@ -16,6 +16,7 @@ import { ReactComponent as OcticonHistory } from '../OcticonHistory.svg';
 import { ReactComponent as OcticonFile } from '../OcticonFile.svg';
 import { ReactComponent as OcticonFileDirectory } from '../OcticonFileDirectory.svg';
 import { ReactComponent as OcticonDownload } from '../OcticonDownload.svg';
+import { ReactComponent as OcticonFork } from '../OcticonFork.svg';
 import { ReactComponent as CaretDown } from '../CaretDown.svg';
 
 
@@ -43,6 +44,7 @@ export const OcticonHistoryIcon = styled(OcticonHistory)`${iconCSS}`
 export const OcticonFileIcon = styled(OcticonFile)`${iconCSS}`;
 export const OcticonFileDirectoryIcon = styled(OcticonFileDirectory)`${iconCSS}`;
 export const OcticonDownloadIcon = styled(OcticonDownload)`${iconCSS}`;
+export const OcticonForkIcon = styled(OcticonFork)`${iconCSS}`;
 export const CaretDownIcon = styled(CaretDown)`${iconCSS}
     width: 8px;
     height: 4px;

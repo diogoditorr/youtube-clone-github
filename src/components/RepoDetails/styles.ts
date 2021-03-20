@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+    className: 'RepoDetails'
+})`
     
 `;
 
@@ -37,4 +39,8 @@ export const Link = styled.a`
     color: #0366d6;
 
     text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 `;

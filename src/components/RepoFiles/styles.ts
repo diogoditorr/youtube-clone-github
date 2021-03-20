@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+    className: 'RepoFiles'
+})`
 `;
 
 export const Header = styled.div`
@@ -17,20 +19,6 @@ export const Header = styled.div`
     border-radius: 6px 6px 0 0;
 `;
 
-export const Profile = styled.div`
-    display: flex;
-    align-items: center;
-
-    margin-right: 4px;
-
-    > span {
-        margin-left: 5px;
-        
-        color: #24292e;
-        font-weight: 600;
-    }
-`;
-
 export const Avatar = styled.img`
     width: 24px;
     height: 24px;
@@ -38,11 +26,32 @@ export const Avatar = styled.img`
     border-radius: 50%;
 `;
 
-export const LastCommit = styled.div`
+export const Overflow = styled.div`
     width: 100%;
 
-    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    > span {
+        display: inline;
+        
+        margin-left: 5px;
+        
+        color: #24292e;
+        font-weight: 600;
+    }
+`;
+
+export const LastCommit = styled.div`
+    display: inline;
+
+    width: 100%;
+
+    margin-left: 4px;
+
+    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 `;
 
@@ -73,6 +82,20 @@ export const Commits = styled.div`
             font-size: 14px;
             font-weight: 400;
             color: #586069;
+        }
+    }
+
+    @media (max-width: 768px) {
+        > span {
+            > small {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 540px) {
+        > span {
+            display: none;
         }
     }
 `;

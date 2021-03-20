@@ -1,6 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs({
+    className: 'RepoOptions'
+})`
     display: flex;
     justify-content: space-between;
 
@@ -18,6 +20,10 @@ export const Right = styled.div`
 
     > div {
         margin-left: 8px;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
     }
 `;
 

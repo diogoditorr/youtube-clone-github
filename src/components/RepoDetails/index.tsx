@@ -8,6 +8,8 @@ import {
     Link
 } from './styles';
 
+import RepoLanguages from '../RepoLanguages';
+
 const RepoDetails: React.FC = () => {
     return (
         <Container>
@@ -37,6 +39,23 @@ const RepoDetails: React.FC = () => {
 
             <Section>
                 <Title>Languages</Title>
+                <RepoLanguages languages={[
+                    {
+                        name: 'php',
+                        realName: 'PHP',
+                        porcentage: '61.4%'
+                    },
+                    {
+                        name: 'css',
+                        realName: 'CSS',
+                        porcentage: '20.8%'
+                    },
+                    {
+                        name: 'javascript',
+                        realName: 'JavaScript',
+                        porcentage: '17.8%'
+                    }
+                ]}/>
             </Section>
         </Container>
     );

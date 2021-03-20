@@ -32,7 +32,16 @@ export const Name = styled.div`
     min-width: 73px;
     width: 16.66667%;
 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
     margin-right: 16px;
+
+    @media (max-width: 768px) {
+        min-width: initial;
+        width: 100%;
+    }
 `;
 
 export const LastCommit = styled.div`
@@ -43,6 +52,10 @@ export const LastCommit = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 export const LastCommitDate = styled.div`
